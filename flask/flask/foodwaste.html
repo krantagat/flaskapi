@@ -1,0 +1,148 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <title>Food waste</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Food Waste around the world 🙃</h1>
+
+      <h2>Table</h2>
+      <li>country = country name</li>
+      <li>
+        combined_figures_(kg/capita/year) = total food waste per kg per person
+        per year
+      </li>
+      <li>
+        household_estimate_(kg/capita/year) = household waste per kg per
+        household per year
+      </li>
+      <li>
+        retail_estimate_(kg/capita/year) = retail waste per kg per retail per
+        year
+      </li>
+      <li>
+        food_service_estimate_(kg/capita/year) = food service waste per kg per
+        service per year
+      </li>
+      <li>Regoin = regoin based on each country</li>
+      <br />
+      <h2>End-point</h2>
+      <li>
+        Ending of "<strong>/foodwastes</strong>" will give you all the country
+        around the world food wasts
+        <a
+          class="btn btn-outline-dark"
+          href="http://127.0.0.1:8080/foodwastes"
+          target="_blank"
+          role="button"
+          >🌍🌏🌎🌍</a
+        >
+      </li>
+      <li>
+        Ending of "<strong>/foodwastes/france</strong>" will give you france's
+        food waste. You can input different countries instead of france
+        <nav class="navbar">
+          <form id="searchForm" class="form-inline">
+            <input
+              id="searchInput"
+              class="form-control mr-sm-2"
+              type="search"
+              placeholder="🌍"
+              aria-label="Search"
+              autocomplete="off"
+            />
+            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">
+              🔎
+            </button>
+          </form>
+        </nav>
+      </li>
+      <li>
+        Ending of "<strong>/foodwastes/pear</strong>" will give you france's
+        food waste. You can input different fruit instead of pear
+
+        <nav class="navbar">
+          <form id="searchForm_fruit" class="form-inline">
+            <input
+              id="searchInput_fruit"
+              class="form-control mr-sm-2"
+              type="search"
+              placeholder="🍐🍉🍈🍇🍍🥭🍌"
+              aria-label="Search"
+              autocomplete="off"
+            />
+            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">
+              🔎
+            </button>
+          </form>
+        </nav>
+      </li>
+      <br />
+
+      <br />
+      <br />
+
+      <script>
+        // Add an event listener to the form
+        document
+          .getElementById("searchForm")
+          .addEventListener("submit", function (event) {
+            // Prevent the default form submission behavior
+            event.preventDefault();
+
+            // Get the value from the input field
+            var inputValue = document.getElementById("searchInput").value;
+
+            // Construct the URL based on the input value
+            var url =
+              "http://127.0.0.1:8080/foodwastes/" +
+              encodeURIComponent(inputValue);
+
+            // Open the URL in a new tab
+            window.open(url, "_blank");
+          });
+      </script>
+
+      <script>
+        // Add an event listener to the form
+        document
+          .getElementById("searchForm_fruit")
+          .addEventListener("submit", function (event) {
+            // Prevent the default form submission behavior
+            event.preventDefault();
+
+            // Get the value from the input field
+            var inputValue = document.getElementById("searchInput_fruit").value;
+
+            // Construct the URL based on the input value
+            var url =
+              "http://127.0.0.1:8080/foodwastes/by_fruit/" +
+              encodeURIComponent(inputValue);
+
+            // Open the URL in a new tab
+            window.open(url, "_blank");
+          });
+      </script>
+    </div>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"
+  ></script>
+</html>
